@@ -9,6 +9,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/iron-form/iron-form.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="my-view1">
@@ -16,22 +18,29 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <style include="shared-styles">
       :host {
         display: block;
-
         padding: 10px;
       }
     </style>
-
     <div class="card">
       <div class="circle">1</div>
-      <h1>View One</h1>
-      <p>Ut labores minimum atomorum pro. Laudem tibique ut has.</p>
-      <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
-    </div>
+      <h1>Login Form</h1>
+      <iron-form id="form1">
+         <form>
+           <paper-input label="Email" type="email" name="email" error-message="Invalid Email" required></paper-input>
+           <paper-input label="Password" type="password" name="password" minlength=8 error-message="Password must be at least 8 chars" required></paper-input>
+           <paper-input label="Password Confirmation" type="password" name="passwordconfirmation" minlength=8 error-message="Password must be at least 8 chars" required></paper-input>
+           <button onclick="submitForm()">Send</button>
+         </form>
+       </iron-form>
+   </div>
   </template>
 
   <script>
     class MyView1 extends Polymer.Element {
       static get is() { return 'my-view1'; }
+    }
+    function submitForm() {
+      console.log(document.querySelector('div'));
     }
 
     window.customElements.define(MyView1.is, MyView1);
