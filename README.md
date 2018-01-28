@@ -1,5 +1,7 @@
 # bibliotech-tech-test
 
+## Instructions
+
 All of these coding challenges will require npm (https://nodejs.org/en/) to be installed.
 
 ePub meta information extraction (required)
@@ -38,3 +40,22 @@ And a submit button that only allows a submit to occur if the email, password an
 P.S. https://elements.polymer-project.org/elements/iron-form and https://elements.polymer-project.org/elements/paper-input may be very useful here.
 
 (Recommended) Write tests for the above Polymer code using web component tester (https://github.com/Polymer/web-component-tester)
+
+## Notes
+
+### First problem
+
+1. Run npm install   
+2. epub files can be parsed with the following command:  
+**node index.js (Absolute path to epub file)**  
+3. Meta data about the epub file should be exported to relevant folder (/assets) under index.json  
+4. Tests can be run with the following command:  
+**npm test** 
+
+### Second problem
+
+The form is located in my-view1. I have replaced the lorem ipsum with an iron-form and three paper-inputs. Email and password validations are run when the form is submitted. I was unable to implement the password confirmation validation and the deactivation of the submit button if fields are invalidated. The Shadow DOM seem to be preventing me from selecting elements such as input fields for functions to be run. Proposed approach would be a custom validator.
+
+
+
+
